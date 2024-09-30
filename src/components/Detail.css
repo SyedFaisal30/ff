@@ -7,52 +7,51 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: beige; 
+  background-color: beige;
 }
 
 .category-buttons {
-  display: flex; /* Use flexbox for horizontal alignment */
-  justify-content: space-between; /*Center align the buttons */
-  margin: 20px 0; /* Add some vertical spacing */
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
   overflow-x: auto;
 }
 
 .category-buttons button {
-  background-color: white; /* Button background */
-  color: #333; /* Text color */
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px 20px; /* Padding for better size */
-  margin: 0 10px; /* Space between buttons */
-  font-size: 16px; /* Font size */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: all 0.3s ease; /* Smooth transition */
+  background-color: white;
+  color: #333;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
   width: 12vw;
 }
 
 /* Hover effects */
 .category-buttons button:hover {
-  background-color: #333333; /* Dark background on hover */
-  color: white; /* White text on hover */
+  background-color: #333333;
+  color: white;
 }
 
 /* Active button style */
 .category-buttons button:active {
-  transform: scale(0.95); /* Slight scale down on click */
+  transform: scale(0.95);
 }
 
-/* Main Wrapper for Horizontal Layout */
 .product-wrapper {
   display: flex;
   padding: 20px 0;
-  justify-content: center; /* Default to start */
-  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: center;
+  flex-wrap: wrap;
   box-sizing: border-box;
 }
 
 .product-item {
-  width: calc(50% - 2vw); /* 50% minus margin for 2 items per row */
+  width: calc(50% - 2vw);
   height: 60vh;
-  margin: 1vh 1vw; /* Spacing between products */
+  margin: 1vh 1vw;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   background-color: white;
@@ -60,7 +59,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  scroll-snap-align: start; /* Ensures smooth snap when scrolling */
+  scroll-snap-align: start;
   gap: 1vw;
 }
 
@@ -128,7 +127,7 @@ body {
 
 .detail p {
   font-size: x-large;
-  margin-bottom: 9vh; 
+  margin-bottom: 9vh;
 }
 
 .detail p del {
@@ -154,7 +153,7 @@ body {
 
 #cart, #buy {
   width: 8vw;
-  height: 8vh;  
+  height: 8vh;
   border-radius: 10vh;
   background-color: white;
   cursor: pointer;
@@ -177,38 +176,61 @@ body {
   }
 
   .category-buttons {
-    justify-content: space-between;/*( Center the buttons on mobile*/
-  }
-  .category-buttons button{
-    width: 15vw;
-  }
-}
-
-/* Center last product if odd number of items */
-.product-wrapper {
-  justify-content: space-between; /* Default spacing */
-}
-
-/* When there's an odd number of children */
-.product-wrapper {
-  justify-content: center; /* Center items if odd */
-}
-
-/* Additional adjustments for smaller devices */
-@media (max-width: 480px) {
-  .detail h2 {
-    font-size: large; /* Smaller heading on very small screens */
+    justify-content: space-between;
   }
 
-  .detail p {
-    font-size: medium; /* Smaller text on very small screens */
+  .category-buttons button {
+    width: 30vw; /* Increase button width for mobile */
   }
-  .category-buttons button{
-    width: 40vw;
+
+  .slides-detail {
+    width: 90vw; /* Adjust width for slider on mobile */
+    height: 50vh;
+  }
+
+  .prev-detail, .next-detail {
+    height: 4vh;
+    width: 4vh;
+    font-size: 20px;
   }
 
   #cart, #buy {
-    width: 10vw; /* Increase button size on very small screens */
-    height: 10vh;
+    width: 20vw;
+    height: 8vh;
+  }
+}
+
+/* Adjustments for smaller devices (480px and below) */
+@media (max-width: 480px) {
+  .detail h2 {
+    font-size: large;
+  }
+
+  .detail p {
+    font-size: medium;
+  }
+
+  .category-buttons button {
+    width: 45vw;
+  }
+  .product-item {
+    flex-direction: column; /* Stack details above image */
+    width: 90%;
+    height: 85vh !important;
+  }
+  .slides-detail {
+    width: 80vw !important;
+    height: 50vh !important;
+  }
+
+  #cart, #buy {
+    width: 35vw;
+    height: 6vh;
+  }
+
+  .prev-detail, .next-detail {
+    height: 3vh;
+    width: 3vh;
+    font-size: 18px;
   }
 }
