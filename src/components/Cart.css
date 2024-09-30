@@ -1,0 +1,220 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: beige;
+}
+
+#tp {
+  text-align: center;
+  padding: 2vh 0;
+}
+
+/* No Products Message */
+.no-products {
+  font-size: 24px; /* Increase font size */
+  text-align: center; /* Center the message */
+  margin-top: 20px; /* Add some margin */
+  color: #ff0000; /* Change color */
+  padding: 20px; /* Add padding */
+  border-radius: 5px; /* Rounded corners */
+  font-size: xx-large;
+}
+
+/* Detail Section */
+.detail-section {
+  min-height: 80vh; /* Set minimum height for Cart */
+}
+
+/* Product Wrapper */
+.product-wrapper {
+  display: flex;
+  padding: 20px 0;
+  justify-content: center; /* Default to start */
+  flex-wrap: wrap; /* Allow items to wrap */
+  box-sizing: border-box;
+}
+
+/* Product Item */
+.product-item {
+  position: relative; /* Set position relative for absolute positioning */
+  width: 47%; /* Takes 48% of the parent width */
+  height: 60vh;
+  margin: 1vh 1vw; /* Spacing between products */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  scroll-snap-align: start; /* Ensures smooth snap when scrolling */
+  gap: 1vw;
+}
+
+/* Image slider section */
+.slides-detail {
+  position: relative;
+  width: 100%;
+  height: 56vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Images inside the slider */
+.slide-detail {
+  width: 100%;
+  height: 95%;
+  display: none;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Make the active slide visible */
+.slide-detail.active {
+  display: block;
+}
+
+/* Navigation buttons for the slider */
+.prev-detail, .next-detail {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+.prev-detail {
+  left: 10px;
+}
+
+.next-detail {
+  right: 10px;
+}
+
+/* Product details section */
+.detail {
+  width: 100%;
+  text-align: left;
+  justify-content: space-between; /* Space between content and delete button */
+  align-items: center;
+}
+
+.detail h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.detail p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.detail p del {
+  color: red;
+  margin-right: 10px;
+}
+
+.policy {
+  font-size: 14px;
+  list-style-type: none;
+}
+
+.policy li {
+  margin-bottom: 10px;
+}
+
+/* Buy Cart Buttons */
+.buy-cart {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+  font-size: larger;
+}
+
+#cart, #buy {
+  width: 5vw;
+  height: 5vh;
+  border-radius: 10vh;
+  background-color: white;
+  cursor: pointer;
+  font-size: x-large;
+}
+
+#cart:hover {
+  background-color: #eeee4e;
+}
+
+#buy:hover {
+  background-color: green;
+  color: white;
+}
+
+/* Delete Button */
+#del {
+  border: none; /* Remove default button styling */
+  background-color: transparent; /* Make it transparent */
+  cursor: pointer;
+  font-size: large;
+  color: #ff0000; /* Change color to indicate it's a delete action */
+  position: absolute; /* Position it absolutely within the product-item */
+  top: 10px; /* Adjust the top position */
+  right: 10px; /* Adjust the right position */
+  z-index: 1; /* Ensure it's on top */
+}
+
+#del:hover {
+  text-decoration: underline; /* Optional: Add hover effect */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .product-item {
+    width: 45%; /* Takes 30% of the width for medium screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .product-item {
+    width: 45%; /* Takes 45% of the width for larger tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-item {
+    width: 70%; /* Takes 70% of the width for smaller tablets */
+  }
+
+  #cart, #buy {
+    width: 10vw; /* Increase button size for touch devices */
+    height: 8vh; /* Adjust height for better usability */
+  }
+
+  .no-products {
+    font-size: large; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-item {
+    width: 90%; /* Takes 90% of the width for mobile devices */
+  }
+
+  .no-products {
+    font-size: medium; /* Adjust font size for very small screens */
+    padding: 10px; /* Reduce padding */
+  }
+}

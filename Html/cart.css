@@ -1,0 +1,171 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: beige;
+  padding: 20px;
+}
+
+/* Main Wrapper for Horizontal Layout */
+.product-wrapper {
+  display: flex;
+  padding: 20px 0;
+  justify-content: center; /* Default to start */
+  flex-wrap: wrap; /* Allow items to wrap */
+  box-sizing: border-box;
+}
+
+.product-item {
+  width: 47%; /* Takes 48% of the parent width */
+  height: 60vh;
+  margin:1vh 1vw; /* Spacing between products */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  scroll-snap-align: start; /* Ensures smooth snap when scrolling */
+  gap: 1vw;
+}
+
+/* Image slider section */
+.slides-detail {
+  position: relative;
+  width: 100%;
+  height: 56vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Images inside the slider */
+.slide-detail {
+  width: 100%;
+  height: 100%;
+  display: none;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Make the active slide visible */
+.slide-detail.active {
+  display: block;
+}
+
+/* Navigation buttons for the slider */
+.prev-detail, .next-detail {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+.prev-detail {
+  left: 10px;
+}
+
+.next-detail {
+  right: 10px;
+}
+
+/* Product details section */
+.detail {
+  width: 100%;
+  text-align: left;
+  /* display: flex; Use flexbox to arrange items */
+  justify-content: space-between; /* Space between content and delete button */
+  align-items: center;
+}
+
+.detail h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.detail p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.detail p del {
+  color: red;
+  margin-right: 10px;
+}
+
+.policy {
+  font-size: 14px;
+  list-style-type: none;
+}
+
+.policy li {
+  margin-bottom: 10px;
+}
+
+.buy-cart{
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+  font-size: larger;
+}
+#cart,#buy{
+  width: 5vw;
+  height: 5vh;  
+  border-radius: 10vh;
+  background-color: white;
+  cursor: pointer;
+  font-size: x-large;
+}
+#cart:hover{
+  background-color:#eeee4e ;
+}
+#buy:hover{
+  background-color: green;
+  color: white;
+}
+#del{
+  border: none; /* Remove default button styling */
+  background-color: transparent; /* Make it transparent */
+  cursor: pointer;
+  font-size: large;
+  color: #ff0000; /* Optional: Change color to indicate it's a delete action */
+  margin-left: auto; /* Push the delete button to the right */
+  display: block;
+  position: absolute;
+  top:15%;
+  right: 30%;
+}
+
+#del:hover {
+  text-decoration: underline; /* Optional: Add hover effect */
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .product-item {
+      width: 80%; /* Takes 80% of the width for smaller screens */
+  }
+}
+
+/* Center last product if odd number of items */
+.product-wrapper {
+  justify-content: space-between; /* Default spacing */
+}
+
+/* When there's an odd number of children */
+.product-wrapper{
+  justify-content: center; /* Center items if odd */
+}

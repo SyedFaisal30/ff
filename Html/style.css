@@ -1,0 +1,296 @@
+/* Basic styles for the navbar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    padding: 5vh;
+    color: white;
+}
+
+.brand {
+    font-size: 1.5rem;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 3vw;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+}
+
+.nav-link:hover {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+/* Toggler button styles */
+.navbar-toggler {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    float: left;
+}
+
+.toggler-icon {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Media query to show the toggler button on smaller screens
+
+/* Active state of the navbar toggler */
+/* .navbar-toggler.active .toggler-icon:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.navbar-toggler.active .toggler-icon:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler.active .toggler-icon:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+} */
+
+/* Active state of the navbar menu */
+.navbar-menu.active {
+    display: flex;
+}
+
+hr {
+    border: 2px solid black;
+    width: 99.%;
+}
+
+.slides {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    transition: transform 0.9s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 65vh;
+    object-fit: cover;
+}
+
+.slide.active {
+    opacity: 1;
+    display: block;
+    transform: scale(1);
+    /* Scale to normal size */
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 20%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    opacity: 0.9;
+    border: 2px solid black;
+    height: 7vh;
+}
+
+button.prev {
+    right: 6%;
+}
+
+button.next {
+    right: 2%;
+}
+
+/* products  */
+.product {
+    box-sizing: border-box;
+    background-color: #333333;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10vh;
+    width: 100%;
+    justify-content: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.cards {
+    text-align: center;
+    border: 2px solid black;
+    box-sizing: border-box;
+    border-radius: 2vh;
+    box-shadow: 6px 12px 12px rgba(0, 0, 0, 0.9);
+    background-color: #ffebcd;
+}
+
+.thumbnail {
+    height: 40vh;
+    width: 15vw;
+    align-items: center;
+    border-radius: 2vh;
+    object-fit: cover;
+    text-decoration: none;
+}
+
+.detail {
+    font-weight: bold;
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+@media (min-width:992px) {
+
+    .menuslg1,
+    .menuslg2,
+    .menuslg3 {
+        float: left;
+        width: 17%;
+        padding: 1vh;
+
+    }
+}
+
+/* media 
+queries */
+@media (min-width: 768px) and (max-width:991px) {
+    .navbar {
+        height: 5vh;
+    }
+
+    button.prev {
+        right: 12%;
+    }
+
+    button.next {
+        right: 2%;
+    }
+
+    button.prev,
+    button.next {
+        height: 5vh;
+        top: 15%;
+    }
+
+    .slides {
+        height: 50vh;
+    }
+
+    .product {
+        gap: 4vw;
+    }
+
+    .menusmd1,
+    .menusmd2,
+    .menusmd3 {
+        float: left;
+        width: 30%;
+        padding: 1vh;
+    }
+
+    .thumbnail {
+        height: 30vh;
+        width: 27vw;
+        align-items: center;
+        border-radius: 2vh;
+        object-fit: cover;
+    }
+}
+
+@media (max-width:767px) {
+    /* Media query to show the toggler button on smaller screens */
+
+    /* Active state of the navbar toggler */
+    .navbar-toggler.active .toggler-icon:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .navbar-toggler.active .toggler-icon:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggler.active .toggler-icon:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    .navbar {
+        height: 18vh;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: right;
+    }
+
+    .navbar-toggler {
+        display: flex;
+    }
+
+    button.prev {
+        right: 12%;
+    }
+
+    button.next {
+        right: 2%;
+    }
+
+    button.prev,
+    button.next {
+        height: 5vh;
+        top: 25%;
+    }
+
+    .product {
+        gap: 3vh;
+    }
+
+    .menussm1,
+    .menussm2,
+    .menussm3 {
+        float: left;
+        width: 45%;
+        padding: 1vh;
+    }
+
+    .thumbnail {
+        height: 30vh;
+        width: 40vw;
+        align-items: center;
+        border-radius: 2vh;
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,214 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: beige; 
+}
+
+.category-buttons {
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: space-between; /*Center align the buttons */
+  margin: 20px 0; /* Add some vertical spacing */
+  overflow-x: auto;
+}
+
+.category-buttons button {
+  background-color: white; /* Button background */
+  color: #333; /* Text color */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for better size */
+  margin: 0 10px; /* Space between buttons */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth transition */
+  width: 12vw;
+}
+
+/* Hover effects */
+.category-buttons button:hover {
+  background-color: #333333; /* Dark background on hover */
+  color: white; /* White text on hover */
+}
+
+/* Active button style */
+.category-buttons button:active {
+  transform: scale(0.95); /* Slight scale down on click */
+}
+
+/* Main Wrapper for Horizontal Layout */
+.product-wrapper {
+  display: flex;
+  padding: 20px 0;
+  justify-content: center; /* Default to start */
+  flex-wrap: wrap; /* Allow items to wrap */
+  box-sizing: border-box;
+}
+
+.product-item {
+  width: calc(50% - 2vw); /* 50% minus margin for 2 items per row */
+  height: 60vh;
+  margin: 1vh 1vw; /* Spacing between products */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  scroll-snap-align: start; /* Ensures smooth snap when scrolling */
+  gap: 1vw;
+}
+
+/* Image slider section */
+.slides-detail {
+  position: relative;
+  width: 100%;
+  height: 56vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Images inside the slider */
+.slide-detail {
+  width: 100%;
+  height: 100%;
+  display: none;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Make the active slide visible */
+.slide-detail.active {
+  display: block;
+}
+
+/* Navigation buttons for the slider */
+.prev-detail, .next-detail {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 24px;
+  height: 5vh;
+  width: 5vh;
+}
+
+.prev-detail {
+  left: 10px;
+}
+
+.next-detail {
+  right: 10px;
+}
+
+/* Product details section */
+.detail {
+  width: 100%;
+  text-align: left;
+}
+
+.detail h2 {
+  font-size: xx-large;
+  margin-bottom: 5vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.detail p {
+  font-size: x-large;
+  margin-bottom: 9vh; 
+}
+
+.detail p del {
+  color: red;
+  margin-right: 10px;
+}
+
+.policy {
+  font-size: 14px;
+  list-style-type: none;
+}
+
+.policy li {
+  margin-bottom: 10px;
+}
+
+.buy-cart {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+  font-size: larger;
+}
+
+#cart, #buy {
+  width: 8vw;
+  height: 8vh;  
+  border-radius: 10vh;
+  background-color: white;
+  cursor: pointer;
+  font-size: x-large;
+}
+
+#cart:hover {
+  background-color: #eeee4e;
+}
+
+#buy:hover {
+  background-color: green;
+  color: white;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .product-item {
+    width: 100%; /* 1 item per row on mobile screens */
+  }
+
+  .category-buttons {
+    justify-content: space-between;/*( Center the buttons on mobile*/
+  }
+  .category-buttons button{
+    width: 15vw;
+  }
+}
+
+/* Center last product if odd number of items */
+.product-wrapper {
+  justify-content: space-between; /* Default spacing */
+}
+
+/* When there's an odd number of children */
+.product-wrapper {
+  justify-content: center; /* Center items if odd */
+}
+
+/* Additional adjustments for smaller devices */
+@media (max-width: 480px) {
+  .detail h2 {
+    font-size: large; /* Smaller heading on very small screens */
+  }
+
+  .detail p {
+    font-size: medium; /* Smaller text on very small screens */
+  }
+  .category-buttons button{
+    width: 40vw;
+  }
+
+  #cart, #buy {
+    width: 10vw; /* Increase button size on very small screens */
+    height: 10vh;
+  }
+}

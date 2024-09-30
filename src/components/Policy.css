@@ -1,0 +1,60 @@
+.policy-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.policy-section {
+  margin-bottom: 50px;
+}
+
+.policy-section h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.policy-section p,
+.policy-section ul li {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.policy-section ul {
+  padding-left: 30px;
+  margin-top: 10px;
+}
+
+.policy-section ul li {
+  list-style-type: disc;
+}
+
+.terms-conditions {
+  padding: 20px;
+  background-color: #eaf2f8;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+.toggle-button {
+  cursor: pointer;
+  color: #2980b9;
+  font-size: 22px;
+}
+
+.toggle-button:hover {
+  color: #3498db;
+}

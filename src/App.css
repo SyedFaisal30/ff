@@ -1,0 +1,482 @@
+/* Basic styles for the navbar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333333;
+  padding: 5vh;
+  color: white;
+}
+
+.brand {
+  font-size: 1.5rem;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 3vw;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: large;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+/* Toggler button styles */
+.navbar-toggler {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  float: left;
+}
+
+.toggler-icon {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Media query to show the toggler button on smaller screens
+
+/* Active state of the navbar toggler */
+/* .navbar-toggler.active .toggler-icon:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.navbar-toggler.active .toggler-icon:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler.active .toggler-icon:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+} */
+
+/* Active state of the navbar menu */
+.navbar-menu.active {
+  display: flex;
+}
+
+hr {
+  border: 2px solid black;
+  width: 99.%;
+}
+
+.slider {
+  position: relative;
+  width: 100%; /* Adjust width as needed */
+  height: 60vh; /* Adjust height as needed */
+  overflow: hidden; /* Hide overflow */
+}
+
+.slides {
+  display: flex; /* Use flexbox to arrange images in a row */
+  transition: transform 0.5s ease; /* Smooth transition effect */
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%; /* Each slide takes full width */
+  height: 100%; /* Set height for slides */
+  /* object-fit: cover; Ensure images cover the entire area */
+
+}
+
+.prev, .next {
+  position: absolute;
+  top: 10%; /* Center vertically */
+  font-size: 30px; /* Adjust icon size */
+  color: white; /* Change icon color */
+  cursor: pointer; /* Show pointer cursor */
+  z-index: 10; /* Ensure icons are above other elements */
+}
+
+.prev {
+  left: 90vw; /* Position the previous button on the left */
+  transform: translateY(-50%); /* Center the button vertically */
+}
+
+.next {
+  right: 10px; /* Position the next button on the right */
+  transform: translateY(-50%); /* Center the button vertically */
+}
+
+.slide.active {
+  opacity: 1;
+  display: block;
+  transform: scale(1);
+  /* Scale to normal size */
+  height: 100vh;
+}
+
+
+/* button.prev {
+  right: 6%;
+}
+
+button.next {
+  right: 2%;
+} */
+
+/* products  */
+.product-card {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.category-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for the text */
+  color: white;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  padding: 10px;
+  font-size: 1.2rem;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .category-name {
+  opacity: 1; /* Show the text on hover */
+}
+
+.product-card:hover .thumbnail {
+  opacity: 0.7; /* Dim the image when hovering */
+}
+
+.product {
+  box-sizing: border-box;
+  background-color: #333333;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5vh;
+  width: 100%;
+  justify-content: center;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.cards {
+  text-align: center;
+  border: 2px solid black;
+  box-sizing: border-box;
+  border-radius: 2vh;
+  box-shadow: 6px 12px 12px rgba(0, 0, 0, 0.9);
+  background-color: #ffebcd;
+}
+
+.thumbnail {
+  height: 40vh;
+  width: 15vw;
+  align-items: center;
+  border-radius: 2vh;
+  object-fit: cover;
+  text-decoration: none;
+}
+
+.detail {
+  font-weight: bold;
+
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+@media (min-width:992px) {
+
+  .menuslg1,
+  .menuslg2,
+  .menuslg3 {
+      float: left;
+      width: 17%;
+      padding: 1vh;
+
+  }
+}
+
+/* media 
+queries */
+@media (min-width: 768px) and (max-width:991px) {
+  .navbar {
+      height: 5vh;
+  }
+
+  button.prev {
+      right: 12%;
+  }
+
+  button.next {
+      right: 2%;
+  }
+
+  button.prev,
+  button.next {
+      height: 5vh;
+      top: 15%;
+  }
+
+  .slides {
+      height: 50vh;
+  }
+
+  .product {
+      gap: 4vw;
+  }
+
+  .menusmd1,
+  .menusmd2,
+  .menusmd3 {
+      float: left;
+      width: 30%;
+      padding: 1vh;
+  }
+
+  .thumbnail {
+      height: 30vh;
+      width: 25vw;
+      align-items: center;
+      border-radius: 2vh;
+      object-fit: cover;
+  }
+}
+
+@media (max-width:767px) {
+  /* Media query to show the toggler button on smaller screens */
+
+  /* Active state of the navbar toggler */
+  .navbar-toggler.active .toggler-icon:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+  }
+
+  .navbar-toggler.active .toggler-icon:nth-child(2) {
+      opacity: 0;
+  }
+
+  .navbar-toggler.active .toggler-icon:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+  }
+
+  .navbar {
+      height: 18vh;
+  }
+
+  .navbar-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: right;
+  }
+
+  .navbar-toggler {
+      display: flex;
+  }
+
+  button.prev {
+      right: 12%;
+  }
+
+  button.next {
+      right: 2%;
+  }
+
+  button.prev,
+  button.next {
+      height: 5vh;
+      top: 25%;
+  }
+
+  .product {
+      gap: 3vh;
+  }
+
+  .menussm1,
+  .menussm2,
+  .menussm3 {
+      float: left;
+      width: 45%;
+      padding: 1vh;
+  }
+
+  .thumbnail {
+      height: 30vh;
+      width: 40vw;
+      align-items: center;
+      border-radius: 2vh;
+      object-fit: cover;
+  }
+}
+/* Footer */
+/* Base styling for footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer logo */
+.footer-logo img {
+  width: 150px;
+}
+
+/* Footer contact details */
+.footer-contact, .footer-policy {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px 130px;
+}
+
+.footer-contact h4, .footer-policy h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.footer-contact p, .footer-policy a {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.footer-policy a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-policy a:hover {
+  text-decoration: underline;
+}
+
+/* Social media section */
+.footer-social {
+  text-align: center;
+}
+
+.footer-social img {
+  width: 30px;
+  margin: 0 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.footer-social img:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive styles for tablets */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-contact, .footer-policy, .footer-social {
+    margin: 20px 0;
+  }
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 480px) {
+  .slider{
+    height: 50vh;
+  }
+  .footer-logo img {
+    width: 120px;
+  }
+
+  .footer-social img {
+    width: 25px;
+    margin: 0 5px;
+  }
+
+  .footer-contact p, .footer-policy a {
+    font-size: 0.8rem;
+  }
+  .prev {
+    left: 76vw;
+    transform: translateY(-50%);
+}
+}
+/* cart page */
+/* .cart-page {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.cart-item {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.cart-item-img {
+  width: 100px;
+  height: 100px;
+}
+
+.cart-item-details {
+  margin-left: 1rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+} */
+.cart-icon {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -5px; /* Adjust based on your design */
+  right: -10px; /* Adjust based on your design */
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
