@@ -3,13 +3,7 @@ FashionFiesta E-commerce Website
 
 Welcome to FashionFiesta, your go-to e-commerce platform for the latest in fashion! This application is a modern, user-friendly online shopping website built using React and Vite, featuring categories such as Men, Women, Kids, Footwear, and Accessories.
 
-Table of Contents
-Features
-Technologies Used
-Installation
-Usage
-Folder Structure
-Contributing
+Table of contnets
 
 Features
 Dynamic Product Categories: Browse a variety of products, organized by categories such as Men, Women, Kids, Footwear, and Accessories.
